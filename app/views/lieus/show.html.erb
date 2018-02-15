@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lieu.name %>
+</p>
+
+<p>
+  <strong>Adresse:</strong>
+  <%= @lieu.adresse %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @lieu.photo %>
+</p>
+
+<p>
+  <strong>Theatre:</strong>
+  <%= @lieu.theatre_id %>
+</p>
+
+<%= link_to 'Edit', edit_lieu_path(@lieu) %> |
+<%= link_to 'Back', lieus_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @theatre.titre %>
+</p>
+
+<p>
+  <strong>Lieu:</strong>
+  <%= @theatre.lieu %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @theatre.type %>
+</p>
+
+<p>
+  <strong>Longueur:</strong>
+  <%= @theatre.longueur %>
+</p>
+
+<p>
+  <strong>Largeur:</strong>
+  <%= @theatre.largeur %>
+</p>
+
+<p>
+  <strong>Surface:</strong>
+  <%= @theatre.surface %>
+</p>
+
+<%= link_to 'Edit', edit_theatre_path(@theatre) %> |
+<%= link_to 'Back', theatres_path %>
