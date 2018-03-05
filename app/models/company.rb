@@ -1,7 +1,6 @@
 class Company < ApplicationRecord
-
   validates :name, presence: true
 
   has_many :theatres
-  belongs_to :user
+  belongs_to :user , optional: true
 end

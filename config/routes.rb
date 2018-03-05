@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :productions
   resources :companies
   resources :theatres
+
+  get '/welcome', to: 'welcome#welcome', as: 'welcome'
 end

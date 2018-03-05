@@ -1,42 +1,65 @@
-<%= form_with(model: company, local: true) do |form| %>
-  <% if company.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+<div class="row company-manager">
+  <div class="col-md-5 mx-auto mt-5">
+    <div class="card mt-3">
+      <div class="card-header">
+        <div class="col-md-2 col-6 mx-auto">
+          <img src="<%= asset_path 'theatre.ico' %>" class="img-fluid">
+        </div>
+      </div>
+      <div class="card-block">
+        <div class="card-text">
+          <%= form_with(model: company, local: true) do |f| %>
+          <% if company.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
 
-      <ul>
-      <% company.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+              <ul>
+              <% company.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+            <fieldset class="mt-0">
+              <legend class="mb-4">Tell us about your Company</legend>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :company_name %>
+              <div class="row">
+                <div class="col-md-6">
+                  <%= f.label :name, class: "sr-only"  %>
+                  <%= f.text_field :name, autofocus: true, placeholder: true, required: true, class: "form-control"  %>
+                </div>
+                <div class="col-md-6">
+                  <%= f.label :lieu, class: "sr-only"  %>
+                  <%= f.text_field :lieu, placeholder: true, required: true, class: "form-control" %>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-12">
+                  <%= f.label :website, class: "sr-only"  %>
+                  <%= f.text_field :website, placeholder: true, required: true, class: "form-control" %>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <%= f.label :size, "Company size", class: "sr-only"  %>
+                  <%= f.select(:size, [['1-9 employees', '1-9'],
+                                               ['10-24 employees', '10-24'],
+                                               ['25-49 employees', '25-49'],
+                                               ['50-99 employees', '50-99'],
+                                               ['100-499 employees', '100-499'],
+                                               ['500-999 employees', '500-999'],
+                                               ['More', 'More']],
+                  { prompt: "Company size", selected: @group&.size }, { required: true, class: "form-control" }) %>
+                  </div>
+                  <div class="col-md-6">
+                    <%= f.label :phone, class: "sr-only"  %>
+                    <%= f.text_field :phone, placeholder: true, required: true, class: "form-control" %>
+                  </div>
+                </div>
+              <%= f.submit "Register",  class: "btn btn-success btn-block mt-3"%>
+            </fieldset>
+          <% end %>
+        </div>
+      </div>
   </div>
-
-  <div class="field">
-    <%= form.label :lieu %>
-    <%= form.text_field :lieu, id: :company_lieu %>
-  </div>
-
-  <div class="field">
-    <%= form.label :size %>
-    <%= form.text_field :size, id: :company_size %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :company_phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :website %>
-    <%= form.text_field :website, id: :company_website %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
