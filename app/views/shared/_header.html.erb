@@ -10,11 +10,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <% if user_signed_in? %>
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item image-nav">
+          <% if current_user.photo? %>
+             <%= image_tag current_user.photo_url , :class => "img-fluid rounded"%>
+          <% else %>
+             <%= image_tag gravatar_url(current_user.email, 30), alt: "gravatar" , :class => "img-fluid rounded"%>
+          <% end %>
+        </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= current_user.first_name %>
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <%= link_to 'Profile', edit_user_registration_path, class: "dropdown-item"%>
             <div class="dropdown-divider"></div>
             <%= link_to('Logout', destroy_user_session_path, :method => :delete, :id => 'logout', class: "dropdown-item")%>
