@@ -9,11 +9,11 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  def create
-    super do
-      flash[:event] = 'user login'
-    end
-  end
+  # def create
+  #   super do
+  #     flash[:event] = 'user login'
+  #   end
+  # end
 
   # DELETE /resource/sign_out
   # def destroy
@@ -33,5 +33,6 @@ class Users::SessionsController < Devise::SessionsController
 
   def after_sign_in_path_for(resource_or_scope)
     return welcome_path if resource_or_scope.admin == false
+    return  theatres_path if resource_or_scope.admin == true
   end
 end
