@@ -1,3 +1,7 @@
+.company-manager {
+  margin-top: 10%;
+}
+
 .user-registration .card-text  , .company-manager .card-text {
   padding: 30px 60px;
 }
@@ -21,10 +25,6 @@
   width: 40px;
 }
 
-.dropdown-menu {
-  display:block !important;
-}
-
 .edit-informations h3 {
   font-weight: 300;
   margin: 6rem 0 2rem 0;
@@ -45,4 +45,13 @@
   border-color: #288d9e !important;
   padding: 10px;
   color: #fff !important;
+}
+
+.image-nav {
+  width: 30px;
+  height: 30px;
+}
+
+.add-new-theatre {
+  margin-top: 7rem;
 }
