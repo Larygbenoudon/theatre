@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-12 add-new-theatre">
+    <%= link_to new_theatre_path , :class => "btn btn-outline-info float-right" do %>
+    <i class="fa fa-plus-circle"></i><span class="pl-2">New Theatre</span>
+   <% end %>
+  </div>
+</div>
+
 
 <h1>Theatres</h1>
 
@@ -31,7 +39,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Theatre', new_theatre_path %>
