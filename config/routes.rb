@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   resources :companies
   resources :theatres
 
-  get '/welcome', to: 'welcome#welcome', as: 'welcome'
+  root 'welcome#welcome'
 end
