@@ -12,5 +12,9 @@ Rails.application.routes.draw do
   resources :companies
   resources :theatres
 
-  root 'welcome#welcome'
+  get '/welcome', to: 'welcome#welcome'
+
+  devise_scope :user do
+    root to: "users/sessions#new"
+  end
 end
