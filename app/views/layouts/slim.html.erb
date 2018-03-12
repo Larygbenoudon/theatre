@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html  itemscope itemtype="http://schema.org/Article" prefix="og: http://ogp.me/ns#" class="chp-bs">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= yield :title %> - Theatre</title>
+  <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', skip_pipeline: true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= yield :meta %>
+</head>
+
+<body data-no-turbolink="true">
+  <%= render "shared/header" %>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
+</body>
+</html>
