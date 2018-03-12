@@ -25,6 +25,7 @@ class TheatresController < ApplicationController
   # POST /theatres.json
   def create
     @theatre = Theatre.new(theatre_params)
+    @theatre.user_id = current_user.id
 
     respond_to do |format|
       if @theatre.save
@@ -69,6 +70,6 @@ class TheatresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def theatre_params
-      params.require(:theatre).permit(:titre, :lieu, :type, :longueur, :largeur, :surface)
+      params.require(:theatre).permit(:titre, :lieu, :theatre_type, :longueur, :largeur, :surface, :user_id)
     end
 end
