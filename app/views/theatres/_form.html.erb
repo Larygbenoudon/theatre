@@ -1,47 +1,65 @@
-<%= form_with(model: theatre, local: true) do |form| %>
-  <% if theatre.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(theatre.errors.count, "error") %> prohibited this theatre from being saved:</h2>
+<div class="row data-card">
+  <div class="col-md-5 mx-auto mt-5">
+    <div class="card mt-3">
+      <div class="card-header">
+        <h5 class="text-center">Create a new theatre</h5>
+      </div>
+      <div class="card-block">
+        <div class="card-text">
+          <%= form_with(model: theatre, local: true) do |form| %>
+            <% if theatre.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(theatre.errors.count, "error") %> prohibited this theatre from being saved:</h2>
 
-      <ul>
-      <% theatre.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                <ul>
+                  <% theatre.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="row">
+              <div class="col-md-6">
+                <%= form.label :titre %>
+                <%= form.text_field :titre, id: :theatre_titre , required: true, class: "form-control" %>
+              </div>
+
+              <div class="col-md-6">
+                <%= form.label :lieu %>
+                <%= form.text_field :lieu, id: :theatre_lieu , required: true, class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <%= form.label :theatre_type %>
+                <%= form.text_field :theatre_type, id: :theatre_type , required: true, class: "form-control" %>
+              </div>
+
+              <div class="col-md-6">
+                <%= form.label :longueur %>
+                <%= form.text_field :longueur, id: :theatre_longueur , required: true, class: "form-control"%>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <%= form.label :largeur %>
+                <%= form.text_field :largeur, id: :theatre_largeur , required: true, class: "form-control" %>
+              </div>
+
+              <div class="col-md-6">
+                <%= form.label :surface %>
+                <%= form.text_field :surface, id: :theatre_surface , required: true, class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="actions">
+               <%= form.submit "Save",  class: "btn btn-success btn-block mt-3"%>
+            </div>
+          <% end %>
+        </div>
+       </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :titre %>
-    <%= form.text_field :titre, id: :theatre_titre %>
   </div>
-
-  <div class="field">
-    <%= form.label :lieu %>
-    <%= form.text_field :lieu, id: :theatre_lieu %>
-  </div>
-
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type, id: :theatre_type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :longueur %>
-    <%= form.text_field :longueur, id: :theatre_longueur %>
-  </div>
-
-  <div class="field">
-    <%= form.label :largeur %>
-    <%= form.text_field :largeur, id: :theatre_largeur %>
-  </div>
-
-  <div class="field">
-    <%= form.label :surface %>
-    <%= form.text_field :surface, id: :theatre_surface %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,13 +1,20 @@
+body {
+  color: #676565 !important;
+}
 .company-manager {
   margin-top: 10%;
 }
 
-.user-registration .card-text  , .company-manager .card-text {
+.user-registration .card-text  , .company-manager .card-text , .data-card .card-text  {
   padding: 30px 60px;
 }
 
 .user-registration {
   margin-top: 60px;
+}
+
+.navbar-brand small {
+  color: #fff;
 }
 
 .btn-success {
@@ -17,8 +24,11 @@
 }
 
 .navbar-dashboard.bg-light {
-  background-color: #288d9e !important;
+  background-color: #011115 !important
+}
 
+.navbar-nav a {
+  color: #fff !important;
 }
 
 .logo {
@@ -54,4 +64,75 @@
 
 .add-new-theatre {
   margin-top: 7rem;
+}
+
+.data-card h5 {
+  font-weight: 300;
+}
+
+.data-card {
+  margin-top: 4rem;
+}
+
+.menu-link {
+  border-left: 7px solid transparent;
+  color: #454a54;
+  display: block;
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 18px;
+  text-decoration: none;
+}
+
+.help-menu-accordion .active a {
+  color: #f1dada;
+}
+
+.help-menu-accordion li {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+.main-content {
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  padding-top: 50px;
+  position: fixed;
+  width: 100%;
+}
+
+.dashboard-content {
+  background: #fafafa;
+  height: 100%;
+  min-height: 100%;
+  overflow: auto;
+  padding: 20px 15px;
+  position: relative;
+  width: calc(100% - 270px);
+  z-index: 2;
+}
+
+.menu-left {
+  padding-right: 0;
+  padding-left: 0;
+  border: 1px solid #f0f0f0;
+  height: 100%;
+  border-top-width: 0px;
+  background: #104a54;
+  width: 270px;
+}
+
+.menu-left  a {
+  color: #fff;
+
+}
+
+.dropdown-menu {
+  display: block !important;
+}
+
+.dropdown .dropdown-item {
+  color: #676565 !important;
 }

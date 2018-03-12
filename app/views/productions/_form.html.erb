@@ -1,42 +1,57 @@
-<%= form_with(model: production, local: true) do |form| %>
-  <% if production.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(production.errors.count, "error") %> prohibited this production from being saved:</h2>
+<div class="row data-card">
+  <div class="col-md-10 mx-auto mt-5">
+    <div class="card mt-3">
+      <div class="card-header">
+        <h5 class="text-center">Create a new production</h5>
+      </div>
+      <div class="card-block">
+        <div class="card-text">
+            <%= form_with(model: production, local: true) do |form| %>
+              <% if production.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(production.errors.count, "error") %> prohibited this production from being saved:</h2>
 
-      <ul>
-      <% production.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                  <ul>
+                  <% production.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <div class="row">
+                 <div class="col-md-7">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <%= form.label :name %>
+                      <%= form.text_field :name, id: :production_name , required: true, class: "form-control" %>
+                    </div>
+
+                    <div class="col-md-6">
+                      <%= form.label :description %>
+                      <%= form.text_field :description, id: :production_description , required: true, class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-md-12">
+                      <%= form.label :adresse %>
+                      <%= form.text_field :adresse, id: :production_adresse , required: true, class: "form-control" %>
+                    </div>
+                  </div>
+
+                  <div class="actions">
+                     <%= form.submit "Save",  class: "btn btn-success btn-block mt-3"%>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                   <figure class="figure">
+                    <img class="figure-img img-fluid" height="157px" src="<%= asset_path 'user-profile.png' %>" alt="picture">
+                    <figcaption class="figure-caption"><%= form.file_field :photo,  class: "picture-btn" %></figcaption>
+                  </figure>
+                </div>
+            </div>
+          <% end %>
+        </div>
+       </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :production_name %>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :production_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :adresse %>
-    <%= form.text_field :adresse, id: :production_adresse %>
-  </div>
-
-  <div class="field">
-    <%= form.label :manager_id %>
-    <%= form.number_field :manager_id, id: :production_manager_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo, id: :production_photo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
