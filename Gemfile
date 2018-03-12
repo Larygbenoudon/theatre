@@ -15,6 +15,8 @@ gem 'pg', '~> 0.21.0'
 
 gem 'puma', '~> 3.0'
 
+gem 'font-awesome-sass'
+
 gem 'sass-rails'
 
 gem 'uglifier', '>= 1.3.0'
