@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="d-flex">
   <head>
     <title>App</title>
     <%= csrf_meta_tags %>
@@ -8,10 +8,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="d-sm-flex flex-row">
     <%= render "shared/header" %>
-    <div class="container-fluid">
-     <%= yield %>
-   </div>
+    <div class="main-content align-self-stretch d-flex">
+      <% if current_user %>
+        <%= render "shared/left_menu" %>
+      <% end %>
+      <div class="dashboard-content">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
