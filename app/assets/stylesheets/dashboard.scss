@@ -129,10 +129,25 @@ body {
 
 }
 
-.dropdown-menu {
-  display: block !important;
-}
-
 .dropdown .dropdown-item {
   color: #676565 !important;
+}
+
+.theatre-list-content tr {
+  background-color: #fff !important;
+}
+
+.theatre-list-content td {
+  border-top: 1px solid #fff !important;
+}
+
+.theatre-list-content td.title{
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+}
+
+.theatre-list-content tr a {
+  color: #b97f7f !important;
+  text-decoration: none;
 }

@@ -1,4 +1,5 @@
 class Production < ApplicationRecord
+  mount_uploader :photo, AvatarUploader
 
   validates :name, :description,  presence: true
 

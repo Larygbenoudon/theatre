@@ -4,12 +4,13 @@ class TheatresController < ApplicationController
   # GET /theatres
   # GET /theatres.json
   def index
-    @theatres = Theatre.all
+    @theatres = Theatre.where(user_id: current_user.id)
   end
 
   # GET /theatres/1
   # GET /theatres/1.json
   def show
+    @lieu = Lieu.where(id: @theatre.lieu_id)
   end
 
   # GET /theatres/new
@@ -26,8 +27,14 @@ class TheatresController < ApplicationController
   def create
     @theatre = Theatre.new(theatre_params)
     @theatre.user_id = current_user.id
+    @theatre.lieu_id = params[:theatre][:lieu_id].to_i
+    @production = Production.where(id: params[:theatre][:production_id].to_i)
+    @theatre.production_id = @production[0].id
+    @company = Company.where(user_id: current_user.id)
+    @theatre.company_id = @company[0].id
 
     respond_to do |format|
+      p @theatre
       if @theatre.save
         format.html { redirect_to @theatre, notice: 'Theatre was successfully created.' }
         format.json { render :show, status: :created, location: @theatre }
@@ -70,6 +77,6 @@ class TheatresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def theatre_params
-      params.require(:theatre).permit(:titre, :lieu, :theatre_type, :longueur, :largeur, :surface, :user_id)
+      params.require(:theatre).permit(:titre, :theatre_type, :longueur, :largeur, :surface,:production_id ,:user_id, :lieu_id , :company_id)
     end
 end

@@ -1,6 +1,6 @@
 class Theatre < ApplicationRecord
 
-  validates :titre, :lieu, presence: true
+  validates :titre, :lieu_id, presence: true
 
   belongs_to :company
   belongs_to :production

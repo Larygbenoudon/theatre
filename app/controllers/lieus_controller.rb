@@ -69,6 +69,6 @@ class LieusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lieu_params
-      params.require(:lieu).permit(:name, :adresse, :photo, :theatre_id)
+      params.require(:lieu).permit(:name, :adresse, :photo)
     end
 end

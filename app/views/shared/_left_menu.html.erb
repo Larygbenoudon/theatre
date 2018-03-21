@@ -1,21 +1,26 @@
 <div class="menu-left d-flex flex-column">
   <ul class="help-menu-accordion pt-3">
     <% if current_user.admin? %>
-     <li  class="<%= yield :production_active %> mt-2" >
-       <%= link_to productions_path, :class => 'menu-link' do %>
-         <i class="fab fa-product-hunt"></i><span class="pl-2">Production</span>
-       <% end %>
-     </li>
-     <li class="<%= yield :lieu_active %>">
-       <%= link_to lieus_path, :class => 'menu-link'  do %>
-        <i class="fas fa-map-marker-alt"></i><span class="pl-2">Lieu</span>
-       <% end %>
-     </li>
-     <li class="<%= yield :company_active %>" >
-       <%= link_to companies_path, :class => 'menu-link'  do %>
-        <i class="fa fa-users" aria-hidden="true"></i><span class="pl-2">Company</span>
-       <% end %>
-     </li>
+       <li  class="<%= yield :theatre_active %> mt-2" >
+        <%= link_to theatres_path, :class => 'menu-link' do %>
+          <i class="fas fa-ticket-alt"></i><span class="pl-2">Theâtre</span>
+        <% end %>
+       </li>
+       <li  class="<%= yield :production_active %> mt-2" >
+         <%= link_to productions_path, :class => 'menu-link' do %>
+           <i class="fab fa-product-hunt"></i><span class="pl-2">Production</span>
+         <% end %>
+       </li>
+       <li class="<%= yield :lieu_active %>">
+         <%= link_to lieus_path, :class => 'menu-link'  do %>
+          <i class="fas fa-map-marker-alt"></i><span class="pl-2">Lieu</span>
+         <% end %>
+       </li>
+       <li class="<%= yield :company_active %>" >
+         <%= link_to companies_path, :class => 'menu-link'  do %>
+          <i class="fa fa-users" aria-hidden="true"></i><span class="pl-2">Company</span>
+         <% end %>
+       </li>
     <% end %>
   </ul>
 </div>

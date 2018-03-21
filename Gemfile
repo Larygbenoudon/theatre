@@ -19,6 +19,8 @@ gem 'font-awesome-sass'
 
 gem 'sass-rails'
 
+gem 'popper_js', '~> 1.12.9'
+
 gem 'uglifier', '>= 1.3.0'
 
 gem 'coffee-rails', '~> 4.2'

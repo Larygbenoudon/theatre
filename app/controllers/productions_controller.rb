@@ -25,6 +25,7 @@ class ProductionsController < ApplicationController
   # POST /productions.json
   def create
     @production = Production.new(production_params)
+    @production.user_id = current_user.id
 
     respond_to do |format|
       if @production.save
@@ -69,6 +70,6 @@ class ProductionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def production_params
-      params.require(:production).permit(:name, :description, :adresse, :manager_id, :photo)
+      params.require(:production).permit(:name, :description, :adresse, :user_id, :photo)
     end
 end

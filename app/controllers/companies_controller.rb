@@ -1,11 +1,10 @@
 class CompaniesController < ApplicationController
-  layout 'slim'
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = Company.where(user_id: current_user.id)
   end
 
   # GET /companies/1
