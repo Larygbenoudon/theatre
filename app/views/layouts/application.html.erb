@@ -18,29 +18,5 @@
         <%= yield %>
       </div>
     </div>
-    <%= render 'shared/embed_code', options: {
-      api_key: current_account.api_key,
-      app_url: ENV['APP_URL'],
-      assets_url: ENV['ASSET_HOST'],
-      launcher: {
-        label: 'Knowledgebase',
-        radius: 8,
-        placement: 'right',
-        offset: {
-          right: 20,
-          bottom: 200
-        },
-        animation: {
-          effect: 'fadeIn',
-          iterationCount: 'infinite',
-          duration: 5
-        }
-      },
-      player: {
-        type: 'default',
-        backdrop: true
-      },
-      segment: true
-    } %>
   </body>
 </html>
