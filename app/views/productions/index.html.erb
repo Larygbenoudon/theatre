@@ -33,7 +33,13 @@
           <td><%= production.name %></td>
           <td><%= production.description %></td>
           <td><%= production.adresse %></td>
-          <td><%= image_tag production.photo_url , :class => "img-fluid rounded image-nav"%></td>
+          <td>
+            <% if production.photo? %>
+              <%= image_tag production.photo_url , :class => "img-fluid rounded image-nav"%>
+            <% else %>
+              <%= image_tag gravatar_url(current_user.email, 30), alt: "gravatar" , :class => "img-fluid rounded"%>
+            <% end %>
+          </td>
           <td><%= link_to 'Show', production %></td>
           <td><%= link_to 'Edit', edit_production_path(production) %></td>
           <td><%= link_to 'Destroy', production, method: :delete, data: { confirm: 'Are you sure?' } %></td>

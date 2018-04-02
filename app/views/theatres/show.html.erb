@@ -1,34 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Titre:</strong>
-  <%= @theatre.titre %>
-</p>
+<div class="row theatre-list-content">
+  <div class="col-md-8 mx-auto infos-theatre">
+   <div class="row">
+       <div class="col-md-6">
+          <p class="pt-5 theatre-title"><%= @theatre.titre %></p>
+          <p>  <%= @lieu.name %></p>
 
-<p>
-  <strong>Lieu:</strong>
-  <%= @lieu.name %>
-</p>
+          <%= link_to 'Back', welcome_path , class: "btn btn-outline-secondary mt-5"%>
 
-<p>
-  <strong>Type:</strong>
-  <%= @theatre.theatre_type %>
-</p>
-
-<p>
-  <strong>Longueur:</strong>
-  <%= @theatre.longueur %>
-</p>
-
-<p>
-  <strong>Largeur:</strong>
-  <%= @theatre.largeur %>
-</p>
-
-<p>
-  <strong>Surface:</strong>
-  <%= @theatre.surface %>
-</p>
-
-<%= link_to 'Edit', edit_theatre_path(@theatre) %> |
-<%= link_to 'Back', theatres_path %>
+       </div>
+       <div class="col-md-6 mr-auto">
+          <p class="pt-5 theatre-title"><%= @production.name %></p>
+          <p class="pb-3">  <%= @production.adresse %></p>
+          <small >of company: </small>
+          <p class="pt-5 theatre-title"> <%= @company.name %></p>
+          <p><%= @company.phone %></p>
+       </div>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,10 @@ gem 'bootstrap', '~> 4.0.0.beta'
 
 gem 'pg', '~> 0.21.0'
 
+gem 'pg_search'
+
+gem 'pundit'
+
 gem 'puma', '~> 3.0'
 
 gem 'font-awesome-sass'

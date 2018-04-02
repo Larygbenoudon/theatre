@@ -109,8 +109,14 @@ GEM
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    pg_search (2.1.2)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
+      arel (>= 6)
     popper_js (1.12.9)
     puma (3.11.2)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -216,8 +222,10 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   pg (~> 0.21.0)
+  pg_search
   popper_js (~> 1.12.9)
   puma (~> 3.0)
+  pundit
   rails (~> 5.1.4)
   rails_12factor
   sass-rails

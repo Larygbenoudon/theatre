@@ -4,7 +4,7 @@ class LieusController < ApplicationController
   # GET /lieus
   # GET /lieus.json
   def index
-    @lieus = Lieu.all
+    @lieus = Lieu.where(user_id: current_user.id)
   end
 
   # GET /lieus/1
@@ -25,6 +25,7 @@ class LieusController < ApplicationController
   # POST /lieus.json
   def create
     @lieu = Lieu.new(lieu_params)
+    @lieu.user_id = current_user.id
 
     respond_to do |format|
       if @lieu.save
@@ -69,6 +70,6 @@ class LieusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lieu_params
-      params.require(:lieu).permit(:name, :adresse, :photo)
+      params.require(:lieu).permit(:name, :adresse, :photo , :user_id)
     end
 end

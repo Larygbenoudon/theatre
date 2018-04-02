@@ -25,6 +25,7 @@ class CompaniesController < ApplicationController
   # POST /companies.json
   def create
     @company = Company.new(company_params)
+    authorize @company
     @company.user_id = current_user.id
 
     respond_to do |format|

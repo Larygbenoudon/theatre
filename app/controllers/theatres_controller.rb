@@ -11,11 +11,15 @@ class TheatresController < ApplicationController
   # GET /theatres/1.json
   def show
     @lieu = Lieu.where(id: @theatre.lieu_id)
+    @production = Production.find_by_id(@theatre.production_id)
+    @company = Company.find_by_id(@theatre.company_id)
   end
 
   # GET /theatres/new
   def new
     @theatre = Theatre.new
+    @lieu = Lieu.where(user_id: current_user.id)
+    @production = Production.where(user_id: current_user.id)
   end
 
   # GET /theatres/1/edit

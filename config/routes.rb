@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :productions
   resources :companies
   resources :theatres
+  resources :search, only: [:index]
 
   get '/welcome', to: 'welcome#welcome'
 

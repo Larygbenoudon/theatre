@@ -1,34 +1,40 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="row theatre-list-content">
-  <div class="col-md-12">
-   <div class="row">
+<div class="row my-3">
+  <div class="col-md-12 float-right">
+    <%= form_tag welcome_path, :method => 'get', class: "form-inline" do %>
+      <%= text_field_tag :search_titre, params[:keywords], class: "form-control", placeholder: "Search ..." %>
+      <span class="input-group-btn">
+       <button class="btn-outline-info my-2 my-sm-0" type="submit" value="search"><i class="fa fa-search "></i></button>
+      </span>
+     <% end %>
+ </div>
+</div>
+
+<div class="row theatre-list-content d-flex">
+  <div class="col-md-8 justify-content-center">
      <% @list_theatres.each do |theatre| %>
-       <div class="col-md-4">
          <div class="card">
            <div class= "card-block">
              <div class="card-text">
-               <table class="table table-hover table-striped mt-4">
+               <table class="table table-hover table-striped">
                  <tbody>
                    <tr>
-                     <td class="title">Titre</td>
-                     <td><%= theatre.titre %></td>
+                     <td class="title"><%= theatre.titre %></td>
+                     <td class="float-right"><%= link_to 'Read more..', theatre %></td>
                    </tr>
                    <tr>
-                     <td class="title">Type</td>
-                     <td><%= theatre.theatre_type %></td>
+                     <td class="theatre-type py-0"><%= theatre.theatre_type %></td>
                    </tr>
                    <tr>
-                    <td><%= link_to 'Read more..', theatre %></td>
+
                   </tr>
                </tbody>
              </table>
             </div>
           </div>
          </div>
-        </div>
      <% end %>
-    </div>
   </div>
 </div>

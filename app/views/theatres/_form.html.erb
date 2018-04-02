@@ -26,7 +26,7 @@
 
               <div class="col-md-6">
                 <%= form.label :lieu_id %>
-                <%= form.collection_select(:lieu_id, Lieu.all , :id , :name , required: true, class: "form-control") %>
+                <%= form.collection_select(:lieu_id, @lieu , :id , :name , required: true, class: "form-control") %>
               </div>
             </div>
 
@@ -57,7 +57,7 @@
             <div class="row mt-3">
               <div class="col-md-12">
                 <%= form.label :production_id %>
-                <%= form.collection_select(:production_id,  Production.all , :id , :adresse) %>
+                <%= form.collection_select(:production_id,  @production, :id , :adresse) %>
               </div>
             </div>
 

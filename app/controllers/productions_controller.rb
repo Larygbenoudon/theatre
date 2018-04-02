@@ -4,7 +4,7 @@ class ProductionsController < ApplicationController
   # GET /productions
   # GET /productions.json
   def index
-    @productions = Production.all
+    @productions = Production.where(user_id: current_user.id)
   end
 
   # GET /productions/1
