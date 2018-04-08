@@ -1,6 +1,6 @@
 class CompanyPolicy < ApplicationPolicy
 
   def create?
-     user.admin? and user.manager?
+    user.manager? && user.company.empty?
   end
 end

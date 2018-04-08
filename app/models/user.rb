@@ -8,4 +8,12 @@ class User < ApplicationRecord
   validates :email, :first_name, :last_name, presence: true
 
   has_many :productions
+
+  def manager?
+    self.admin == true
+  end
+
+  def company
+   Company.where(user_id: self.id)
+  end
 end
